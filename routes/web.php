@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RestoController;
+use App\Models\Restaurent;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
+
+Route::get('/',[RestoController::class,'index']);
+Route::get('/list',[RestoController::class,'list']);
+Route::view('/add', 'add');
+Route::post('/add',[RestoController::class,'add']);
+Route::get('/delete/{id}',[RestoController::class,'delete']);
+Route::get('/edit/{id}',[RestoController::class,'edit']);
+
