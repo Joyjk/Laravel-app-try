@@ -40,4 +40,15 @@ class RestoController extends Controller
         session()->flash("status","Deleted Successfully");
         return redirect('/list');
     }
+    public function editPost(Request $req)
+    {
+        $restro =Restaurent::find($req->id);
+      
+        $restro->name = $req->name;
+        $restro->email = $req->email;
+        $restro->address = $req->address;
+        $restro->update();
+        session()->flash("status","Updated Successfully");
+        return redirect("/list");
+    }
 }

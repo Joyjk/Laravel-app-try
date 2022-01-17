@@ -25,4 +25,6 @@ Route::view('/add', 'add');
 Route::post('/add',[RestoController::class,'add']);
 Route::get('/delete/{id}',[RestoController::class,'delete']);
 Route::get('/edit/{id}',[RestoController::class,'edit']);
+Route::view('/edit', 'edit');
+Route::post('/edit',[RestoController::class,'editPost']);
 

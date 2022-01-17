@@ -1,7 +1,8 @@
 @extends('layout')
 @section('content')
-<form method="POST">
+<form method="POST" action="/edit">
     @csrf
+    <input type="hidden" name="id" value="{{$data->id}}">
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Name</label>
       <input type="text" class="form-control" id="exampleInputEmail1" value="{{$data->name}}" name="name" >
